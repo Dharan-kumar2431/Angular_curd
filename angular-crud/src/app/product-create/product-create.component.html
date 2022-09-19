@@ -1,0 +1,44 @@
+<div>
+    <h3 class="text-center">Product Create</h3>
+    <form [formGroup]="createDetails" (ngSubmit)="createProductDetails()">
+        <input type="text" placeholder="productname" class="form-control m-3" formControlName="productName">
+        <span class="m-3 text-danger"
+            *ngIf="(createDetails.get('productName')?.touched || submitted) && createDetails.get('productName')?.hasError('required')">product
+            name is required</span>
+        <input type="text" placeholder="productDescription" class="form-control m-3"
+            formControlName="productDescription">
+        <span class="m-3 text-danger"
+            *ngIf="(createDetails.get('productDescription')?.touched || submitted) && createDetails.get('productDescription')?.hasError('required')">product
+            description is required</span>
+        <input type="text" placeholder="productId" class="form-control m-3" formControlName="productId">
+        <span class="m-3 text-danger"
+            *ngIf="(createDetails.get('productId')?.touched || submitted) && createDetails.get('productId')?.hasError('required')">productId
+            is required</span>
+        <input type="number" placeholder="productprice" class="form-control m-3" formControlName="price">
+        <span class="m-3 text-danger"
+            *ngIf="(createDetails.get('price')?.touched || submitted) && createDetails.get('price')?.hasError('required')">product
+            price is required</span>
+        <span class="m-3 text-danger" *ngIf="(createDetails.get('price')?.hasError('min') && submitted)"> Enter mix price of 100</span>
+        <span class="m-3 text-danger" *ngIf="(createDetails.get('price')?.hasError('max') && submitted)"> Enter max price of 5000</span>
+
+
+        <input type="text" placeholder="Brand" class="form-control m-3" formControlName="brand">
+        <span class="m-3 text-danger"
+            *ngIf="(createDetails.get('brand')?.touched || submitted) && createDetails.get('brand')?.hasError('required')">brand
+            is required</span>
+        <input type="number" placeholder="Quantity" class="form-control m-3" formControlName="quantity">
+        <span class="m-3 text-danger"
+            *ngIf="(createDetails.get('quantity')?.touched || submitted) && createDetails.get('quantity')?.hasError('required')">quantity
+            is required</span>
+            <span class="m-3 text-danger" *ngIf="(createDetails.get('quantity')?.hasError('min') && submitted)"> Enter mix quantity of 10</span>
+            <span class="m-3 text-danger" *ngIf="(createDetails.get('quantity')?.hasError('max') && submitted)"> Enter max quantity of 500</span>
+    
+
+        <div>
+            <button class="btn btn-primary m-3">Create</button>
+
+
+            <a [routerLink]="['../']"><button class="btn btn-primary m-3">Back</button></a>
+        </div>
+    </form>
+</div>

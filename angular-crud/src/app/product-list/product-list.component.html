@@ -1,0 +1,35 @@
+<h2 class="tableHead text-primary"> Product List </h2>
+
+<a [routerLink]="['create']"> <button class="btn btn-primary createbutton">Create</button> </a>
+
+
+<div>
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Product Name</th>
+            <th>Product Id</th>
+            <th>product Brand</th>
+            <th>Product Price</th>
+            <th>Product Quentity</th>
+            <th>product Description</th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+
+        <tr *ngFor="let val of displayValue;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{val.productName}}</td>
+            <td>{{val.productId}}</td>
+            <td>{{val.brand}}</td>
+            <td>{{val.price}}</td>
+            <td>{{val.quantity}}</td>
+            <td>{{val.productDescription}}</td>
+            <td><a [routerLink]="['edit', i]"> Edit </a></td>
+            <td><button class="btn btn-primary" (click)="deleteData(i)">DELETE</button></td>
+
+
+
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,16 @@
+.createbutton{
+    /* margin-left: 90%; */
+    margin: 0% 0px 2% 90%;
+}
+
+table,tr,th,td{
+    border: 1px solid black;
+    padding: 30px;
+    text-align: center;
+    margin: auto;
+}
+
+.tableHead{
+    padding-top: 20px;
+    text-align: center;
+}
